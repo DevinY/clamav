@@ -1,0 +1,13 @@
+FROM alpine
+RUN apk add clamav clamav-daemon clamav-libunrar 
+
+#RUN sed -i 's/User clamav/User root/' /etc/clamav/clamd.conf
+#RUN sed -i 's/^#TCPAddr 127.0.0.1/TCPAddr 127.0.0.1/'  /etc/clamav/clamd.conf
+#RUN sed -i 's/^#TCPSocket 3310/TCPSocket 3310/'  /etc/clamav/clamd.conf
+#
+RUN freshclam
+#
+#EXPOSE 3310
+
+#CMD clamd -c /etc/clamav/clamd.conf --foreground
+ENTRYPOINT clamscan --exclude-dir=".git" -r 

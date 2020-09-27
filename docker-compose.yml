@@ -1,0 +1,7 @@
+version: '3.6'
+services:
+  clamav:
+    image: clamav
+    build:
+      context: .
+      dockerfile: Dockerfile-alpine
