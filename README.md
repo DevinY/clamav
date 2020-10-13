@@ -2,7 +2,7 @@
 
 一、在自己的電腦建立名稱為clamav的image，並且取得最新的病毒碼
 <pre>
-docker-compose build
+docker-compose build --no-cache
 </pre>
 如果您沒有安裝docker-compose，可以用下方指令，建立clamav的image。
 <pre>
